@@ -1,0 +1,34 @@
+page-registro {
+
+    .bg-registro {
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/imgs/man-composing-a-new-song-PFDXW92.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    .registrar {
+        text-align: center;
+        margin-top: -32px;
+        font-size: 15px;
+        color: #fce4ec;
+        }
+    
+    .bg-label {
+        background: transparent;
+    }
+    .text-label {
+        text-align: center;
+        font-size: 15px !important;
+        color: #fce4ec !important; 
+    }
+    .button {
+        font-size: 15px !important;
+        color: #fff !important;
+    }
+    .position-center {
+        position: relative;
+    }
+    
+
+}

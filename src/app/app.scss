@@ -1,0 +1,141 @@
+//Import font
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
+//Global
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
+//Align
+.center {
+    text-align: center
+}
+
+.right {
+    text-align: right
+}
+
+//BG TRANSPARENT
+.bg-transparent {
+    background-color: transparent;
+}
+
+
+
+//Margin
+.mg-neg-50 {
+    margin-top: -50px;
+}
+.mg-neg-300 {
+    margin-top: -300px;
+}
+.mg-neg-top-100 {
+    margin-top: -100px;
+}
+.mg-neg-top-10 {
+    margin-top: -10px;
+}
+.mg-neg-left-10 {
+    margin-left: -10px;
+}
+.mg-neg-right-10 {
+    margin-right: -10px;
+}
+.mg-neg-left-10 {
+    margin-bottom: -10px;
+}
+.mg-left {
+    margin-left: 40px;
+}
+
+
+.no-margin {
+    margin: 0px
+}
+.mg-top-5 {
+    margin-top: 5px;
+}
+.mg-top-10 {
+    margin-top: 10px;
+}
+.mg-top-20 {
+    margin-top: 20px;
+}
+.mg-top-30 {
+    margin-top: 30px;
+}
+.mg-top-40 {
+    margin-top: 40px;
+}
+.mg-top-80 {
+    margin-top: 80px;
+}
+.mg-top-120 {
+    margin-top: 120px;
+}
+.mg-top-400 {
+    margin-top: 400px;
+}
+.mg-top-250 {
+    margin-top: 250px;
+}
+.mg-top-230 {
+    margin-top: 230px;
+}
+.mg-top-200 {
+    margin-top: 200px;
+}
+
+
+.mg-center {
+    margin: center
+}
+
+//Padding
+.no-padding {
+    padding: 0px
+}
+
+.padding-20 {
+    padding: 20px
+}
+
+.padding-40 {
+    padding: 40px
+}
+.padding-80 {
+    padding: 80px
+}
+
+.padding-10-percent {
+    padding: 10px
+}
+
+.padding-top-10-percent {
+    padding-top: 10%
+}
+.padding-top-30-percent {
+    padding-top: 30%
+}
+
+
+.padding-top-30 {
+    padding-top: 30px
+}
+.padding-lat-40 {
+    padding-top: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 0px;
+}
+
+
+//Font style
+.bold {
+    font-weight: 700
+}
+.light {
+    font-weight: 300
+}
+.font-size-1em {
+    font-size: 1em
+}

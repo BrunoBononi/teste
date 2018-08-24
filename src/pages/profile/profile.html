@@ -1,0 +1,45 @@
+<ion-header no-border>
+
+  
+
+  <ion-navbar>
+
+
+<!--ARRUMAR COR DO ARROW BACK BUTTON-->
+      <button ion-button clear Large icon-only class="mg-top-20 " >
+          <ion-icon name="arrow-round-back"></ion-icon>
+        </button>
+
+    <ion-title class="center mg-top-20">Profile
+    </ion-title>
+<!--MENU BUTTON ON HEADER-->
+      <ion-buttons end>
+        <button ion-button menu-Toggle='right' (click)="doClick()">
+          <ion-icon name="menu"></ion-icon>
+         </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+<!--BACKGROUND-->
+  <div class="bg-profile">
+<!--TABS-->
+    <div class="tabs-positioning">
+
+      <ion-tabs tabsPlacement>
+          <ion-tab [root]="albumsPage" tabTitle="Albums"></ion-tab>
+          <ion-tab [root]="tracksPage" tabTitle="Tracks"></ion-tab>
+          <ion-tab [root]="uploadsPage" tabTitle="Uploads"></ion-tab>
+        </ion-tabs>
+
+      </div>
+
+
+
+  </div>
+
+
+
+</ion-content>
