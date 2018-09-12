@@ -1,4 +1,91 @@
 page-home {
+    .absDiv {
+        position: absolute;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.146);
+        width: 100%;
+        padding: 10px 0px;
+    }
+
+    .botTxt{
+        color: #fff;
+        font-weight: 700;
+        font-size: 24px
+    }  
+
+    .cont {
+        width: 70%;
+        color: #7a0003;
+        font-size: 20px;
+        margin-top: 30px;
+        margin-left: 15%;
+        background: #fff;
+        padding: 12px 10px;
+        border-radius: 10px
+    }
+
+    .botSlide {
+        position: absolute;
+        bottom: -1%;
+        width: 105%;
+        left: -2.5%;
+        max-width: 110%;
+    }
+
+    .swiper-pagination {
+        bottom: 20% !important
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #fff
+    }
+
+    .featTxt {
+        color: #fff;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 0px;
+        margin-top: 0px
+    }
+
+    .subTxt {
+        color: #fff;
+        font-size: 16px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        width: 80%;
+        margin-left: 10%
+    }
+
+    .subTxt2 {
+        color: #fff;
+        font-size: 16px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        width: 95%;
+        margin-left:2.5%
+    }
+
+    .txtCenter {
+        text-align: center
+    }
+
+    .slideCust {
+        margin-top: 25%
+    }
+
+    .midSlide {
+        position: absolute;
+        top: 45%;
+    }
+
+    .topSlide {
+        position: absolute;
+        top: 0;
+        width: 110%;
+        left: -5%;
+        max-width: 200%;
+    }
 
     //BG SOLID COLORS
         .bg-preLogin-30{

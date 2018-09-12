@@ -1,45 +1,152 @@
 <ion-header no-border>
-
-  
-
   <ion-navbar>
-
-
-<!--ARRUMAR COR DO ARROW BACK BUTTON-->
-      <button ion-button clear Large icon-only class="mg-top-20 " >
-          <ion-icon name="arrow-round-back"></ion-icon>
-        </button>
-
-    <ion-title class="center mg-top-20">Profile
+    <ion-title center>
+      <span class="tit">Perfil</span>
     </ion-title>
-<!--MENU BUTTON ON HEADER-->
-      <ion-buttons end>
-        <button ion-button menu-Toggle='right' (click)="doClick()">
-          <ion-icon name="menu"></ion-icon>
-         </button>
-      </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu" style="color: #BE0005"> </ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+
 </ion-header>
 
 
-<ion-content >
-<!--BACKGROUND-->
-  <div class="bg-profile">
-<!--TABS-->
-    <div class="tabs-positioning">
-
-      <ion-tabs tabsPlacement>
-          <ion-tab [root]="albumsPage" tabTitle="Albums"></ion-tab>
-          <ion-tab [root]="tracksPage" tabTitle="Tracks"></ion-tab>
-          <ion-tab [root]="uploadsPage" tabTitle="Uploads"></ion-tab>
-        </ion-tabs>
-
+<ion-content>
+  <div class="custPad">
+    <div class="infoDiv">
+      <div class="avatar" [ngStyle]="{ 'background-image': 'url(' + user.avatar + ')'}"></div>
+      <div class="infos">
+        <p class="comp">{{user?.type}}</p>
+        <p class="userName">{{user.name}}</p>
+        <p class="status">Online</p>
       </div>
-
-
-
+    </div>
   </div>
 
+  <!-- ARTISTA -->
+  <div *ngIf="user.type === 'artista'">
+    <!-- SEGMENT -->
+    <ion-segment [(ngModel)]="tab" style="margin-top: 180px">
+      <ion-segment-button value="albuns">
+        Playlists
+      </ion-segment-button>
+      <ion-segment-button value="pedidos">
+        Pedidos
+      </ion-segment-button>
+      <!-- <ion-segment-button value="upload" (click)="favoritos()">
+        Favoritos
+      </ion-segment-button> -->
+    </ion-segment>
+
+    <div [ngSwitch]="tab">
+      <!-- ALBUNS -->
+      <div class="custPad" *ngSwitchCase="'albuns'">
+        <ion-grid class="nopad">
+          <ion-row class="nopad">
+            <ion-col col-6 *ngFor="let a of albuns" style="margin-top: 20px" (click)="playlist(a)">
+              <div class="alb" [ngStyle]="{ 'background-image': 'url(' + a.cover + ')'}">
+
+              </div>
+              <p class="aName">{{a.name}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <!-- TRACKS -->
+      <div *ngSwitchCase="'pedidos'">
+        <div class="custPad">
+          <ion-grid class="nopad">
+            <ion-row>
+              <ion-col col-12 style="margin-top: 20px" (click)="novoPedido()">
+                <div class="addNovo">Novo pedido</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+        <div *ngFor="let p of requests" class="itemCust custPad2">
+          <ion-row class="nopad">
+            <ion-col col-4 class="nopad">
+              <span class="audioN" style="text-transform: capitalize">{{p.categorie}}</span>
+            </ion-col>
+
+            <ion-col col-5 class="nopad">
+              <span class="audioN" style="text-transform: capitalize">{{p.createdAt.seconds * 1000 | amDateFormat:'d/MM/YYYY
+                - hh:mm'}}</span>
+            </ion-col>
+
+            <ion-col col-3 class="nopad">
+              <span class="audioN" style="text-transform: capitalize">{{p.status}}</span>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPOSITOR -->
+  <div *ngIf="user.type === 'compositor'">
+    <!-- SEGMENT -->
+    <ion-segment [(ngModel)]="tab" style="margin-top: 180px">
+      <ion-segment-button value="albuns">
+        Álbuns
+      </ion-segment-button>
+      <ion-segment-button value="tracks">
+        Faixas
+      </ion-segment-button>
+      <ion-segment-button value="upload" (click)="upload()">
+        Enviar
+      </ion-segment-button>
+    </ion-segment>
+
+    <div [ngSwitch]="tab">
+      <!-- ALBUNS -->
+      <div class="custPad" *ngSwitchCase="'albuns'">
+        <ion-grid class="nopad">
+          <!-- ADICIONAR NOVO -->
+          <ion-row>
+            <ion-col col-12 style="margin-top: 20px" (click)="novo()">
+              <div class="addNovo">Criar novo álbum</div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="nopad">
+            <ion-col col-6 *ngFor="let a of albuns" style="margin-top: 20px" (click)="album(a)">
+              <div class="alb" [ngStyle]="{ 'background-image': 'url(' + a.cover + ')'}">
+
+              </div>
+              <p class="aName">{{a.name}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <!-- TRACKS -->
+      <div *ngSwitchCase="'tracks'">
+        <div *ngFor="let t of tracks" class="itemCust custPad2">
+
+          <audio-track #audio [track]="t">
+            <ion-row class="nopad">
+              <ion-col col-1 class="nopad">
+                <audio-track-play dark [audioTrack]="audio">
+                  <ion-spinner></ion-spinner>
+                </audio-track-play>
+              </ion-col>
+              <ion-col col-11 class="nopad">
+                <span class="audioN" *ngIf="!audio.isPlaying">{{t.name}}</span>
+                <audio-track-progress-bar *ngIf="audio.isPlaying" duration progress [audioTrack]="audio"></audio-track-progress-bar>
+              </ion-col>
+            </ion-row>
+
+          </audio-track>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 </ion-content>

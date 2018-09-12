@@ -1,1 +1,23 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu side="right" [content]="mycontent">
+    <ion-content>
+        <div class="topMenu" *ngIf="user">
+            <img class="avatar2" [ngStyle]="{ 'background-image': 'url(' + user.avatar + ')'}">
+            <p class="userN">{{user.name}}</p>
+            <p class="userS">Online</p>
+        </div>
+
+        <div  class="botMenu center" > 
+            <p class="itemM" (click)="profile()">Perfil</p>
+            <p class="itemM" (click)="albuns()">Álbuns</p>
+            <p *ngIf="comp" class="itemM " (click)="uploads()">Uploads</p>
+            <!-- <p class="itemM">Configurações</p> -->
+        </div>
+
+        <div class="logout" (click)="logout()">
+                <p >Logout</p>
+
+        </div>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

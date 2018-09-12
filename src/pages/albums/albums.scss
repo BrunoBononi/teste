@@ -1,3 +1,127 @@
 page-albums {
 
+    .itemCust {
+        border-bottom: 1px solid #fff
+    }
+
+    time {
+        color: #fff;
+        margin-left: 20px
+    }
+
+    audio-track-progress-bar {
+        padding: 6px 0px
+    }
+
+    .alb {
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 280px;
+        border-radius: 10px
+    }
+
+    .nopad {
+        padding: 0px !important
+    }
+
+    .aName {
+        margin-top: 10px !important;
+        color: #fff;
+        font-weight: 500;
+        font-size: 18px;
+        margin-bottom: 0px
+    }
+
+    .aq {
+        margin-top: 10px !important;
+        color: #fff;
+        font-weight: 400;
+        font-size: 14px;
+        opacity: 0.5;
+    }
+
+    ion-segment {
+        background: #564A4A
+    }
+
+    .segment-button {
+        color: #fff !important;
+        letter-spacing: 2px;
+        font-weight: 500 !important
+    }
+
+    .comp {
+        text-transform: uppercase;
+        color: #FFFFFF;
+        opacity: 0.5;
+        letter-spacing: 2px;
+        font-size: 12px;
+        margin-bottom: 0px !important
+    }
+
+    .scroll-content {
+        background: #180707
+    }
+    .toolbar {
+        padding: 30px !important;
+       
+    }
+
+    .toolbar-background {
+        background: #fff !important
+    }
+
+    ion-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 90px 1px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    
+      }
+
+      .tit {
+        color: #BE0005 !important;
+        font-weight: 700
+      }
+   
+      .infoDiv {
+          position: relative;
+      }
+
+      .avatar {
+          position: absolute;
+          top: 26px;
+          left: 26px;
+          background-position: center;
+          background-size: cover;
+          width: 120px;
+          height: 120px;
+          border-radius: 100px
+      }
+
+      .infos {
+          position: absolute;
+          top: 26px;
+          left: 170px;
+      }
+
+      .userName {
+          color: #fff;
+          font-weight: 500;
+          font-size: 22px;
+          margin-top: 5px !important;
+          margin-bottom: 0px !important
+      }
+
+      .status {
+        color: #fff;
+        font-weight: 500;
+        font-size: 12px;
+        margin-top: 5px !important
+      }
+
 }

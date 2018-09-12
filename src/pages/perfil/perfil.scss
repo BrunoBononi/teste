@@ -1,0 +1,136 @@
+page-perfil {
+    .editClass {
+        text-align: right;
+    }
+
+    .edit {
+        color: #fff;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        opacity: 0.4;
+        font-weight: 700
+    }
+
+
+    .edit2 {
+        color: rgb(74, 74, 74);
+        margin-top: 0px;
+        margin-bottom: 0px;
+        opacity: 0.4;
+        font-weight: 700
+    }
+
+    .bio {
+        color: #fff;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .nopad {
+        padding: 0px !important
+    }
+
+    .bio2 {
+        color: #fff;
+        margin-top: 10px !important;
+        margin-bottom: 0px;
+    }
+
+
+    .about {
+        color: rgb(7, 7, 7);
+        margin-top: 0px !important;
+        margin-bottom: 0px;
+    }
+
+    .aboutCard2 {
+        width: 95%;
+        margin-left: 2.5%;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        margin-top: 20px
+    }
+
+    .aboutCard {
+        width: 95%;
+        margin-left: 2.5%;
+        padding: 20px;
+        background: linear-gradient(to top, #480506, #A70B0F);
+        border-radius: 10px;
+        margin-top: 20px
+    }
+
+    .userName {
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 0px
+    }
+
+    .textCenter {
+        text-align: center
+    }
+
+    .userType {
+        text-transform: capitalize;
+        color: #FFFFFF;
+        opacity: 0.5;
+        // letter-spacing: 2px;
+        font-size: 18px;
+        margin-bottom: 0px !important;
+        margin-top: 5px !important;
+    }
+
+    .avatar {
+        // position: absolute;
+        // top: 26px;
+        // left: 26px;
+        background-position: center;
+        background-size: cover;
+        width: 120px;
+        height: 120px;
+        border-radius: 100px
+    }
+
+    .centerDiv {
+        width: 100%;
+        text-align: center;
+        margin-top: 30px
+    }
+
+    .scroll-content {
+        background: #180707
+    }
+
+    .custIcon {
+        z-index: 2;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    .toolbar {
+        padding: 30px !important;
+    }
+    .toolbar-background {
+        background: #fff !important
+    }
+
+    ion-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 90px 1px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        z-index: 1;
+      }
+
+      .tit {
+        color: #BE0005 !important;
+        font-weight: 700
+      }
+}

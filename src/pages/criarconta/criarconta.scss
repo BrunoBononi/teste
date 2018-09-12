@@ -1,34 +1,105 @@
-page-registro {
-
-    .bg-registro {
-        width: 100%;
-        height: 100%;
-        background-image: url('../../assets/imgs/man-composing-a-new-song-PFDXW92.jpg');
+page-criarconta {
+    .scroll-content {
+     
+        background-image: url('../../assets/imgs/bgauto.png');
         background-size: cover;
         background-position: center;
     }
-    .registrar {
-        text-align: center;
-        margin-top: -32px;
-        font-size: 15px;
-        color: #fce4ec;
-        }
+    
+
     
     .bg-label {
         background: transparent;
     }
-    .text-label {
+
+    .absDiv {
+        position: absolute;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.119);
+        width: 100%;
+        padding: 10px 0px;
+    }
+
+    .botTxt{
+        color: #fff;
+        font-weight: 700;
+        font-size: 24px
+    }   
+
+    .btnSaibaMais {
+        padding: 20px 30px;
+        width: 60%;
+        margin-left: 20%;
+        border-radius: 100px;
+        background-color: #fff;
+        color: #2b2b2b;
+        letter-spacing: 2px
+    }
+
+    .text {
         text-align: center;
-        font-size: 15px !important;
-        color: #fce4ec !important; 
+        font-size: 34px;
+        color: #fff;
+        font-weight: 700;
+        margin-top: 30px
     }
     .button {
         font-size: 15px !important;
-        color: #fff !important;
+        color: #000000 !important;
     }
     .position-center {
         position: relative;
     }
     
+    .logoHome {
+        margin-top: 20px
+    }
+
+    .padding-cust {
+        padding: 40px
+    }
+
+    .padding-cust2 {
+        padding: 80px
+    }
+
+    .loginBtn {
+        width: 50%;
+        margin-left: 25%;
+        background: linear-gradient(to top, #BB0005, #610003);
+        padding: 15px 20px;
+        border-radius: 100px;
+        margin-top: 40px;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 2px
+    }
+
+    @media screen  and (max-width: 400px) {
+        .padding-cust {
+            padding: 20px
+        }
+
+        .padding-cust2 {
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 80px;
+            padding-bottom: 20px
+        }
+    }
+
+    @media only screen 
+      and (device-width : 375px) 
+      and (device-height : 812px) 
+      and (-webkit-device-pixel-ratio : 3) { 
+        .padding-cust {
+            padding: 40px
+        }
+    
+        .padding-cust2 {
+            padding: 80px
+        }
+      }
+
 
 }

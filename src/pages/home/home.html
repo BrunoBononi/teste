@@ -1,79 +1,59 @@
-<ion-content>  
+<ion-content>
+    <ion-icon class="backBtn2" name="ios-arrow-back" (click)="back()"></ion-icon>
 
-  <!--BACKGROUND-->
-  <div class="bg-preLogin-30">
- 
-   <!--PAGE CONTAINER-->
- <div>
-     <ion-slides direction="horizontal">
-         <!--SLIDE 1-->
-             <ion-slide class='padding-top-30-percent'>
-                 <ion-card class='bg-transparent'>
-                     <ion-card-content>
-                       <ion-card-header class="font-white">
-                         Crie 
-                         </ion-card-header>
-                         <p class="font-white white">
-                           Estamos animados para conhecer novos talentos
-                         </p>
-                         <img class='center' src="../../assets/imgs/man-with-guitar-writing-to-music-book-at-studio-PCMASJ6.jpg"/>
-                     </ion-card-content>
-                   </ion-card>
-             </ion-slide>
-         <!--SLIDE 2-->
-             <ion-slide class="padding-top-30-percent">
-                 <ion-card class='bg-transparent'>
-                     <ion-card-content class=''>
-                       <ion-card-header class="font-white">
-                         Grave
-                         </ion-card-header>
-                         <p class="font-white">
-                             Grave suas músicas e tenha uma
-                             plataforma que é acessada pelo
-                             principais artistas do mercado brasileiro
-                         </p>
-                         <img class='center'src="assets/imgs/jason-rosewell-60014-unsplash.jpg"/>
-                     </ion-card-content>
-                   </ion-card>
-             </ion-slide>
-         <!--SLIDE 3-->
-             <ion-slide class='padding-top-30-percent'>
-                 <ion-card class='bg-transparent'>
-                     <ion-card-content>
-                       <ion-card-header class="font-white">
-                         Compartilhe
-                         </ion-card-header>
-                         <p class="font-white">
-                             Aguardamos ansiosos para ouvir o que
-                             você tem feito
-                         </p>
-                         <img class='center' src="../../assets/imgs/close-up-fashion-female-373945.jpg"/>
-                     </ion-card-content>
-                   </ion-card> 
-             </ion-slide>
-         <!--SLIDE 4-->
-             <ion-slide class='padding-top-30-percent'>
-                 <ion-card class='bg-transparent'>
-                     <ion-card-content>
-                       <ion-card-header class="font-white">
-                         Produza
-                         </ion-card-header>
-                         <p class="font-white">
-                             E quem sabe poder produzir sua
-                             musica e investir nesse próximo
-                             sucesso 
-                         </p>
-                         <img class='center' src="../../assets/imgs/industry-macro-mic-164755.jpg"/>
-                     </ion-card-content>
-                 </ion-card>
-                 <button ion-button color="light" round class="mg-top-40" (click)="openLoginPage()">Entendi </button>
- 
-                 </ion-slide>
-           </ion-slides>
-         </div>
-       </div>
- 
- 
- 
- </ion-content>
- 
+    <!--BACKGROUND-->
+    <div class="bg-preLogin-30">
+        <div>
+            <img src="assets/imgs/topslide.png" class="topSlide">
+            <!-- <img src="assets/imgs/mid.png" class="midSlide"> -->
+            <img src="assets/imgs/botslide.png" class="botSlide">
+            <ion-slides direction="horizontal" class="slideCust" pager (ionSlideDidChange)="slideChanged()">
+                <ion-slide class="txtCenter">
+                    <p class="featTxt">Crie</p>
+                    <p class="subTxt">Estamos animados para conhecer novos talentos no mercado brasileiro</p>
+                    <img src="assets/imgs/sl1.png">
+                </ion-slide>
+
+                <ion-slide class="txtCenter">
+                    <p class="featTxt">Grave</p>
+                    <p class="subTxt2">Grave suas músicas e tenha uma plataforma que é acessada pelo principais artistas
+                        do mercado brasileiro</p>
+                    <img src="assets/imgs/sl2.png">
+                </ion-slide>
+
+                <ion-slide class="txtCenter">
+                    <p class="featTxt">Compartilhe</p>
+                    <p class="subTxt">Aguardamos ansiosos para ouvir o que você tem feito</p>
+                    <img src="assets/imgs/sl3.png">
+                </ion-slide>
+
+                <ion-slide class="txtCenter">
+                    <p class="featTxt">Produza</p>
+                    <p class="subTxt2">E quem sabe poder produzir sua musica e investir nesse próximo sucesso </p>
+                    <img src="assets/imgs/sl4.png">
+
+                    <!-- <div class="cont" (click)="prosseguir()">Prosseguir</div> -->
+
+                </ion-slide>
+
+            </ion-slides>
+        </div>
+
+        <div class="absDiv" *ngIf="showDiv">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-6 class="center" (click)="entrar()">
+                        <p class="botTxt">Entrar</p>
+                    </ion-col>
+                    <ion-col col-6 class="center" (click)="register()">
+                        <p class="botTxt">Criar conta</p>
+                    </ion-col>
+                </ion-row>
+
+            </ion-grid>
+        </div>
+    </div>
+
+
+
+</ion-content>

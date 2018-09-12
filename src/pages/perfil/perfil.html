@@ -1,0 +1,217 @@
+<ion-header no-border>
+  <ion-navbar>
+    <!-- <ion-buttons style="z-index: 2" (click)="back()"> -->
+    <button ion-button icon-only class="custIcon" (click)="back()">
+      <ion-icon name="md-arrow-back" style="color: #BE0005"> </ion-icon>
+    </button>
+    <!-- </ion-buttons> -->
+
+
+    <ion-title center>
+      <span class="tit">Perfil</span>
+    </ion-title>
+
+    <!-- <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu" style="color: #BE0005"> </ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="centerDiv">
+    <img (click)="pegarFoto()" class="avatar" [ngStyle]="{ 'background-image': 'url(' + user.avatar + ')'}" />
+    <p class="userName">{{user.name}}</p>
+    <p class="userType">{{user.type}}</p>
+  </div>
+
+  <ion-grid *ngIf="!edit">
+    <ion-row style="margin-top: 20px">
+      <ion-col col-3></ion-col>
+      <ion-col col-2 class="textCenter" (click)="facebook()">
+        <img src="assets/imgs/facebook.png" style="width: 90%">
+      </ion-col>
+      <ion-col col-2 class="textCenter" (click)="twitter()">
+        <img src="assets/imgs/twitter.png" style="width: 90%">
+      </ion-col>
+      <ion-col col-2 class="textCenter" (click)="instagram()">
+        <img src="assets/imgs/instagram.png" style="width: 90%">
+      </ion-col>
+      <ion-col col-3></ion-col>
+    </ion-row>
+
+    <div style="width: 100%; text-align:center; margin-bottom: 10px">
+      <p class="edit" (click)="enableEdit()">EDITAR</p>
+    </div>
+  </ion-grid>
+
+  <ion-grid *ngIf="edit">
+    <div class="aboutCard2">
+      <ion-row class="nopad">
+        <ion-col col-6 class="nopad">
+          <p class="about">REDES SOCIAIS <br><span style="opacity: 0.4">Insira apenas seu nickname, sem links ou "@".</span></p>
+        </ion-col>
+        <ion-col col-6 class="nopad editClass">
+          <p class="edit2" (click)="save()">SALVAR</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="nopad mg-top-20" style="border-bottom: solid 1px rgb(222, 222, 222); padding-bottom: 10px !important">
+        <ion-col col-6 class="nopad">
+          <p class="edit2">Facebook</p>
+        </ion-col>
+        <ion-col col-6 class="nopad editClass">
+          <input style="width: 100%; background: transparent; border: none; box-shadow: none; color: #000; text-align: right;"
+            placeholder="www.facebook.com/" [(ngModel)]="user.facebook">
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row class="nopad mg-top-20" style="border-bottom: solid 1px rgb(222, 222, 222); padding-bottom: 10px !important">
+        <ion-col col-6 class="nopad">
+          <p class="edit2">Twitter</p>
+        </ion-col>
+        <ion-col col-6 class="nopad editClass">
+          <input style="width: 100%; background: transparent; border: none; box-shadow: none; color: #000; text-align: right;"
+          placeholder="@" [(ngModel)]="user.twitter">
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="nopad mg-top-20" style="border-bottom: solid 1px rgb(222, 222, 222); padding-bottom: 10px !important">
+        <ion-col col-6 class="nopad">
+          <p class="edit2">Instagram</p>
+        </ion-col>
+        <ion-col col-6 class="nopad editClass">
+          <input style="width: 100%; background: transparent; border: none; box-shadow: none; color: #000; text-align: right;"
+            placeholder="@" [(ngModel)]="user.instagram">
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+
+  <div class="aboutCard" *ngIf="!edit">
+    <ion-row class="nopad">
+      <ion-col col-6 class="nopad">
+        <p class="bio">BIO</p>
+      </ion-col>
+      <ion-col col-6 class="nopad editClass">
+        <p class="edit" (click)="enableEdit()">EDITAR</p>
+      </ion-col>
+    </ion-row>
+    <p class="bio2">{{user?.bio}}</p>
+  </div>
+
+  <div class="aboutCard2" *ngIf="!edit">
+    <ion-row class="nopad">
+      <ion-col col-6 class="nopad">
+        <p class="about">INFORMAÇÕES</p>
+      </ion-col>
+      <ion-col col-6 class="nopad editClass">
+        <p class="edit2" (click)="enableEdit()">EDITAR</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="nopad mg-top-20" style="border-bottom: solid 1px rgb(222, 222, 222); padding-bottom: 10px !important">
+      <ion-col col-6 class="nopad">
+        <p class="edit2">Nome</p>
+      </ion-col>
+      <ion-col col-6 class="nopad editClass">
+        <p class="about">{{user?.name}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="nopad mg-top-20" style="border-bottom: solid 1px rgb(222, 222, 222); padding-bottom: 10px !important">
+      <ion-col col-6 class="nopad">
+        <p class="edit2">Celular</p>
+      </ion-col>
+      <ion-col col-6 class="nopad editClass">
+        <p class="about">{{user?.celular}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="nopad mg-top-20" style="border-bottom: solid 1px rgb(222, 222, 222); padding-bottom: 10px !important">
+      <ion-col col-6 class="nopad">
+        <p class="edit2">E-mail</p>
+      </ion-col>
+      <ion-col col-6 class="nopad editClass">
+        <p class="about">{{user?.email}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="nopad mg-top-20" style="border-bottom: solid 1px rgb(222, 222, 222); padding-bottom: 10px !important">
+      <ion-col col-6 class="nopad">
+        <p class="edit2">Endereço</p>
+      </ion-col>
+      <ion-col col-6 class="nopad editClass">
+        <p class="about">{{user?.endereco}}</p>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+  <!-- EDIT -->
+  <div class="aboutCard" *ngIf="edit">
+    <ion-row class="nopad">
+      <ion-col col-6 class="nopad">
+        <p class="bio">BIO</p>
+      </ion-col>
+      <ion-col col-6 class="nopad editClass">
+        <p class="edit" (click)="save()">SALVAR</p>
+      </ion-col>
+    </ion-row>
+    <textarea style="padding: 0px; border: none; box-shadow: none; color: #fff; width: 100%; margin-top: 10px; background: transparent"
+      placeholder="Digite aqui" [(ngModel)]="user.bio"></textarea>
+  </div>
+
+  <div class="aboutCard2" *ngIf="edit">
+    <ion-row class="nopad">
+      <ion-col col-6 class="nopad">
+        <p class="about">INFORMAÇÕES</p>
+      </ion-col>
+      <ion-col col-6 class="nopad editClass">
+        <p class="edit2" (click)="save()">SALVAR</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="nopad mg-top-20" style="border-bottom: solid 1px rgb(222, 222, 222); padding-bottom: 10px !important">
+      <ion-col col-6 class="nopad">
+        <p class="edit2">Nome</p>
+      </ion-col>
+      <ion-col col-6 class="nopad editClass">
+        <input style="width: 100%; background: transparent; border: none; box-shadow: none; color: #000; text-align: right;"
+          placeholder="Digite aqui" [(ngModel)]="user.name">
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="nopad mg-top-20" style="border-bottom: solid 1px rgb(222, 222, 222); padding-bottom: 10px !important">
+      <ion-col col-6 class="nopad">
+        <p class="edit2">Celular</p>
+      </ion-col>
+      <ion-col col-6 class="nopad editClass">
+        <input style="width: 100%; background: transparent; border: none; box-shadow: none; color: #000; text-align: right;"
+          placeholder="Digite aqui" [(ngModel)]="user.celular">
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="nopad mg-top-20" style="border-bottom: solid 1px rgb(222, 222, 222); padding-bottom: 10px !important">
+      <ion-col col-6 class="nopad">
+        <p class="edit2">E-mail</p>
+      </ion-col>
+      <ion-col col-6 class="nopad editClass">
+        <p class="about">Não pode ser editado.</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="nopad mg-top-20" style="border-bottom: solid 1px rgb(222, 222, 222); padding-bottom: 10px !important">
+      <ion-col col-6 class="nopad">
+        <p class="edit2">Endereço</p>
+      </ion-col>
+      <ion-col col-6 class="nopad editClass">
+        <input style="width: 100%; background: transparent; border: none; box-shadow: none; color: #000; text-align: right;"
+          placeholder="Digite aqui" [(ngModel)]="user.endereco">
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

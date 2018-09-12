@@ -1,9 +1,197 @@
 //Import font
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 //Global
 *{
-  font-family: 'Open Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
+
+.backBtn {
+    color: #fff;
+    font-size: 22px;
+    margin-top: 25px;
+    margin-left: 25px
+    // position: absolute;
+    // top: 5%;
+    // left: 5%;
+}
+
+.backBtn2 {
+    color: #fff;
+    font-size: 22px;
+    position: absolute;
+    top: 25px;
+    left:25px;
+    z-index: 1000;
+}
+
+.topMenu {
+    background: #A11418;
+    height: 40%;
+    width: 100%;
+    text-align: center
+}
+
+.logout {
+    position: absolute;
+    bottom: 30px;
+    color:#fff;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300
+}
+
+@media screen  and (max-width: 400px) {
+    .logout {
+        position: absolute;
+        bottom: 5px;
+        color:#fff;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 300
+    }
+
+    .botMenu {
+        padding-top: 0px !important;
+        background:#880003;
+        height: 60%;
+        width: 100%;
+        text-align: center
+    }
+    
+}
+@media only screen 
+and (device-width : 375px) 
+and (device-height : 812px) 
+and (-webkit-device-pixel-ratio : 3) { 
+    .logout {
+        position: absolute;
+        bottom: 30px;
+        color:#fff;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 300
+    }
+
+    .botMenu {
+        padding-top: 40px;
+        background:#880003;
+        height: 60%;
+        width: 100%;
+        text-align: center
+    }
+    
+}
+
+.audioN {
+    color: #fff;    
+    display: block;
+    margin-top: 12px;
+    margin-left: 20px
+}
+
+.itemM {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 20px 0px;
+    color:#fff;
+    font-size: 30px;
+    font-weight: 300
+}
+
+.botMenu {
+    padding-top: 40px;
+    background:#880003;
+    height: 60%;
+    width: 100%;
+    text-align: center
+}
+
+.userN {
+    font-weight: 500;
+    color:#fff;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    font-size: 18px
+}
+
+.userS {
+    font-weight: 300;
+    color:#fff;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.avatar2 {
+    margin-top: 40px;
+    background-position: center;
+    background-size: cover;
+    width: 120px;
+    height: 120px;
+    border-radius: 100px
+}
+
+.custPad {
+    padding: 26px
+}
+
+.custPad2 {
+    padding: 10px
+}
+
+
+.custInp {
+    color:#fff;
+    font-size: 20px;
+    font-weight: 300
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff !important;
+    opacity: 1; /* Firefox */
+}
+
+.loginItem {
+    background: transparent;
+    text-align: center !important;
+    padding-right: 16px;
+
+}
+
+ion-input {
+    input {
+      text-align: center;
+      /* IF YOU ALSO WANT TO PUSH PLACHEHOLDER TO THE RIGHT USE THE FOLLOWING, IF NOT JUST DELETE THE ::-webkit-input-placeholder*/
+      ::-webkit-input-placeholder {
+        text-align: center;
+        color: #fff;
+        opacity: 1;
+      }
+    }
+  }
+
+.bot {
+    background: #180707;
+    height: 45%;
+    padding: 30px
+}
+
+.top {
+    height:55%;
+    background-image: url('../../assets/imgs/img.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%
+}
+
+.vamosC {
+    color:#fff;
+    font-weight: 700;
+    font-size: 32px !important
+}
+
 
 //Align
 .center {

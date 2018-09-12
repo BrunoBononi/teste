@@ -1,44 +1,44 @@
-<ion-content > 
-
-    <ion-content >
-
+<ion-content>
+    <ion-content>
         <!--BACKGROUND-->
-       <div class="bg-registro">
-       <!--LOGO-->
-        <div>
-        <img class="padding-80" src='../../assets/imgs/logo-sala-3-188x540.png'>
-        </div>
-        <!--TEXT-->
-        <div class="text">
-        O SUCESSO 
-        <div>
-        A UM TOQUE
-        </div>
-        </div>
-
-
-
-            <!--FORMS-->
-            <div class="padding-40">
-      
+        <div class="bg-registro">
+            <div class="overlay">
+                <!--LOGO-->
+                <div>
+                    <img class="padding-cust2 logoHome" src='../../assets/imgs/logo-sala-3-188x540.png'>
                 </div>
-            <!--BUTTON-->
-            <div class="center">
-                <button ion-button round >SAIBA MAIS</button>
-            </div>
-            <div class="center">
+                <!--TEXT-->
+                <div class="text">
+                    O SUCESSO<br>A UM TOQUE
+                </div>
+                <!--FORMS-->
+                <div class="padding-cust">
 
+                </div>
+                <!--BUTTON-->
+                <div class="center" (click)="saibaMais()">
+                    <div class="btnSaibaMais">VEJA COMO FUNCIONA</div>
+                </div>
+
+                <div class="absDiv">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col col-6 class="center" (click)="entrar()">
+                                <p class="botTxt">Entrar</p>
+                            </ion-col>
+                            <ion-col col-6 class="center" (click)="register()">
+                                <p class="botTxt">Criar conta</p>
+                            </ion-col>
+                        </ion-row>
+
+                    </ion-grid>
+                </div>
+                <!-- <div class="center">
                     <button ion-button color="dark" class="mg-top-120 " (click)="openEntrarPage()" clear>Entrar </button>
-                    <button ion-button color="dark" class="mg-top-120 " (click)="openCriarcontaPage()" clear>Criar conta </button>
-
-
+                    <button ion-button color="dark" class="mg-top-120 " (click)="openCriarcontaPage()" clear>Criar conta
+                        </button>
+                </div> -->
             </div>
-            
-              
-            
-      </div>
-      
-      </ion-content>
-      
-
+        </div>
+    </ion-content>
 </ion-content>

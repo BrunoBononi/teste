@@ -1,47 +1,31 @@
-<ion-content> 
+<ion-content>
+    <ion-icon class="backBtn" name="ios-arrow-back" (click)="back()"></ion-icon>
 
-  <!--BACKGROUND-->
-<div class="bg-registro">
-   <!--HEADER-->
-   <div>
-      <button ion-button color="light" clear Large icon-only class="mg-top-40">
-          <ion-icon name="arrow-round-back"></ion-icon>
-        </button>
+  <div >
+    <!--LOGO-->
+    <div>
+      <img class="padding-logo logoHome" src='../../assets/imgs/logo-sala-3-188x540.png'>
+    </div>
+    <div class="center">
+      <p class="vamosC">Vamos começar</p>
+    </div>
+  </div>
+  <div class="botEntrar">
+    <ion-item class="loginItem">
+      <ion-input [(ngModel)]="email" type="email" class="custInp" placeholder="Usuário"></ion-input>
+    </ion-item>
 
-        <!--LOGO-->
-        <div class="center mg-neg-50">
-        <img src="../../assets/imgs/logo-sala-3-188x540.png" class="logo padding-80">
-        <div class="text">
-          Vamos começar
-        </div>
-       </div>
+    <ion-item class="loginItem senhaItem">
+      <ion-input [(ngModel)]="password" type="password" class="custInp" placeholder="Senha"></ion-input>
+    </ion-item>
 
-        <!--FORMS-->
-        <div class="bg-solid">
-        <div class="padding-20">
-               <ion-list>
-                   <ion-item class="bg-label no-padding">
-                  <ion-label stacked class="text-label">Email</ion-label>
-                  <ion-input type="user" ></ion-input>
-                </ion-item>
-          
-                <ion-item class="bg-label no-padding">
-                  <ion-label stacked class="text-label ">Senha</ion-label>
-                  <ion-input type="email" ></ion-input>
-                </ion-item>              
-              </ion-list>
-        </div>
-       
-        <!--BUTTON-->
-        <div class="center">
-            <button ion-button center color="red-400" round >LOGIN</button>
-            </div>
-            <div class="center">
-               <button ion-button small center color="red-400" clear > Esqueceu a senha ?</button>
-            </div>
-       
-       </div>
-   </div>
+    <div class="loginBtn" (click)="login()">
+      LOGIN
+    </div>
+
+    <div class="center" (click)="forgot()">
+        <p style="margin-top: 50px; color:#fff;font-weight: 300;font-size: 16px">Esqueceu sua senha?</p>
+    </div>
   </div>
 
 

@@ -1,45 +1,26 @@
-<ion-content >
+<ion-content>
+    <ion-icon class="backBtn" name="ios-arrow-back" (click)="back()"></ion-icon>
 
   <!--BACKGROUND-->
- <div class="bg-registro">
- <!--HEADER-->
- <div>
-    <button ion-button color="light" clear Large icon-only class="mg-top-40">
-        <ion-icon name="arrow-round-back"></ion-icon>
-      </button>
-      <div class="center registrar bold">
-        Registrar
-      </div>
-      <!--FORMS-->
-      <div class="padding-40">
+  <!--BACKGROUND-->
+  <div class="bg-registro">
+    <div class="overlay">
+      <ion-item class="loginItem" style="padding-top: 70px">
+        <ion-input [(ngModel)]="nome" type="text" class="custInp" placeholder="Nome"></ion-input>
+      </ion-item>
 
-          <ion-list>
+      <ion-item class="loginItem" style="margin-top: 20px">
+        <ion-input [(ngModel)]="email"type="email" class="custInp" placeholder="E-mail"></ion-input>
+      </ion-item>
 
-              <ion-item class="bg-label mg-top-40 no-padding">
-                <ion-label stacked class="text-label">NOME</ion-label>
-                <ion-input type="text"></ion-input>
-              </ion-item>
-            
-              <ion-item class="bg-label no-padding">
-                <ion-label stacked class="text-label ">Email</ion-label>
-                <ion-input type="email"></ion-input>
-              </ion-item>
+      <ion-item class="loginItem" style="margin-top: 20px">
+        <ion-input [(ngModel)]="senha" type="password" class="custInp" placeholder="Senha"></ion-input>
+      </ion-item>
 
-              <ion-item class="bg-label no-padding">
-                  <ion-label stacked class="text-label">Telefone</ion-label>
-                  <ion-input type="tel"></ion-input>
-                </ion-item>
-            
-            </ion-list>
+      <div class="loginBtn" (click)="criar()">
+        CRIAR CONTA
       </div>
-      <!--BUTTON-->
-      <div class="center">
-          <button ion-button center color="red-400" round >CRIAR CONTA</button>
-      </div>
-      <div>
-        
-      </div>
- </div>
-</div>
+    </div>
+  </div>
 
 </ion-content>

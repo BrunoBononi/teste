@@ -13,7 +13,33 @@ import { AlbumsPage } from '../pages/albums/albums';
 import { TracksPage } from '../pages/tracks/tracks';
 import { UploadPage } from '../pages/upload/upload';
 
+import { File } from '@ionic-native/file';
+import { Media } from '@ionic-native/media';
+import { MediaCapture } from '@ionic-native/media-capture';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+export const firebaseconfig = {
+  apiKey: "AIzaSyB6DvNq2V88k5EOnu-f7mJaPt1LJIV3oYo",
+  authDomain: "sala3r1-900d1.firebaseapp.com",
+  databaseURL: "https://sala3r1-900d1.firebaseio.com",
+  projectId: "sala3r1-900d1",
+  storageBucket: "sala3r1-900d1.appspot.com",
+  messagingSenderId: "911912406004",
+  timestampsInSnapshots: true,
+};
+import { FirebaseService } from '../providers/firebase';
+import { ImagesUpload } from '../providers/images-upload';
+import { ProfilePageModule } from '../pages/profile/profile.module';
+import { ModalPageModule } from '../pages/modal/modal.module';
+import { HomePage } from '../pages/home/home';
+import { IonicStorageModule } from '@ionic/storage';
+import { PerfilPage } from '../pages/perfil/perfil';
+import { Camera } from '@ionic-native/camera';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FilePath } from '@ionic-native/file-path';
+import { IOSFilePicker } from '@ionic-native/file-picker';
 
 @NgModule({
   declarations: [
@@ -21,30 +47,47 @@ import { UploadPage } from '../pages/upload/upload';
     LoginPage,
     CriarcontaPage,
     EntrarPage,
-    ProfilePage,
     AlbumsPage,
     TracksPage,
-    UploadPage
+    UploadPage,
+    HomePage,
+    PerfilPage
   ],
   imports: [
+    AngularFireModule.initializeApp(firebaseconfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    ProfilePageModule,
+    ModalPageModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    HomePage,
     MyApp,
     LoginPage,
     CriarcontaPage,
     EntrarPage,
-    ProfilePage,
     AlbumsPage,
     TracksPage,
-    UploadPage
+    UploadPage,
+    PerfilPage
   ],
   providers: [
+    Camera,
+    MediaCapture,
+    File,
+    Media,
+    FirebaseService,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ImagesUpload,
+    FileChooser,
+    FilePath,
+    IOSFilePicker
+    // { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

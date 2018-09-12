@@ -1,0 +1,246 @@
+page-modal {
+
+    .topDiv {
+        margin-top: 300px;
+        width: 80%;
+        margin-left: 10%;
+        background: #fff;
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px 10px 0px 0px ;
+        border-bottom: 1px solid rgb(188, 188, 188)
+    }
+
+    ion-select {
+        text-align: center !important;
+        width: 40%;
+        margin-left: 30% !important;   
+    }
+
+    ion-option {
+        text-align: center !important
+    }
+
+    .botDiv {
+        width: 80%;
+        margin-left: 10%;
+        background: #fff;
+        text-align: center;
+        padding: 15px;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    .btnEnviar {
+        color: #fff;
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 100px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center
+    }
+
+    ::placeholder { 
+        color: #000 !important;
+        opacity: 0.6; 
+        letter-spacing: 2px
+    }
+    
+
+    .custom {
+        width: 100%;
+        border: none;
+        background: transparent;
+        text-align: center
+    }
+
+    button {
+        background: transparent !important;
+        color: #fff !important;
+        text-transform: capitalize 
+    }
+
+    ion-list {
+        margin-top: 40px !important
+    }
+
+    ion-item {
+        background: transparent !important;
+        color: #fff;
+    }
+
+    .txtCenter {
+        text-align: center
+    }
+
+    .soundImg {
+        width: 110%;
+        max-width: 150%;
+        margin-left: -5%;
+        margin-top: 80px
+    }
+
+    .musicRow {
+        margin-top: 40%
+    }
+
+    .sideIcon {
+        margin-top: 15%
+    }
+
+    .topTitle {
+        margin-top: 20%;
+        color: #fff;
+        // font-weight: 700;
+        margin-bottom: 0px;
+        font-size: 32px
+    }
+
+    .subTitle {
+        color: #fff;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        font-size: 19px
+    }
+
+    .clock {
+        margin-top: 50%;
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 0px;
+        font-size: 54px
+    }
+
+    .bgBlack {
+        background: #180707 !important; 
+    }
+
+    .subClock {
+        color: #fff;
+        font-weight: 300;
+        margin-top: 10px;
+        margin-bottom: 0px
+    }
+
+    .arrow {
+        position: absolute;
+        top: 25px;
+        left:25px;
+        z-index: 1000
+    }
+   
+
+    .newBg {
+        background: #180707;
+    }
+    .itemCust {
+        border-bottom: 1px solid #fff
+    }
+
+    time {
+        color: #fff;
+        margin-left: 20px
+    }
+
+    audio-track-progress-bar {
+        padding: 6px 0px
+    }
+
+    .absD {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 210px
+    }
+    ion-segment {
+        background: #564A4A
+    }
+
+
+    .feat2 {
+        margin-left: 15px;
+        color: #fff;
+        font-size: 18px;
+        opacity: 0.7;
+        text-transform: capitalize;
+        margin-bottom: 0px !important
+    }
+
+    .feat {
+        color: #fff;
+        font-size: 18px;
+        opacity: 0.7;
+        text-transform: capitalize;
+        margin-bottom: 0px !important
+    }
+
+    .segment-button {
+        color: #fff !important;
+        letter-spacing: 2px;
+        font-weight: 500 !important
+    }
+
+    .titleAlb {
+        color: #fff;
+        font-size: 34px;
+        font-weight: 500;
+        margin-top: 10px 
+    }
+
+    .ov {
+        position: absolute;
+        top: -15px;
+        width: 100%;
+        left: 0
+    }
+    
+    .topAlb {
+        height: 500px;
+        width: 100%;
+        background-position: center;
+        background-size: cover
+    }
+
+    .scroll-content {
+        background: linear-gradient(to top, #BB0005, #610003);
+    }
+
+    .voice {
+        width: 80%;
+        margin-top: 30%
+    }
+
+    .txt1 {
+        margin-top: 45%;
+        color:#fff;
+        margin-bottom: 0px;
+        font-size: 30px;
+        font-weight: 700
+    }
+
+    .txt2 {
+        color:#fff;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        font-size: 16px
+    }
+
+    .slideUn {
+        height: 100%;
+    }
+
+    .ion-slides {
+        padding-bottom: 130px;
+    }
+
+    .swiper-pagination {
+        left: 0;
+    bottom: 100px !important;
+    width: 100%
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #fff !important
+    }
+}

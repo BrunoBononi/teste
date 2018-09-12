@@ -1,0 +1,175 @@
+<ion-content [ngClass]="albumt ? 'newBg' : ''">
+  <img src="assets/imgs/arrow.png" class="arrow" (click)="back()">
+
+  <div *ngIf="slides" padding>
+    <div class="center">
+      <ion-slides pager>
+        <ion-slide class="slideUn">
+          <div class="center">
+            <img src="assets/imgs/voic.png" class="voice">
+          </div>
+          <p class="txt1">Música é vida</p>
+          <p class="txt2">Grave ou nos envie a sua música e sucesso</p>
+        </ion-slide>
+
+        <ion-slide class="slideUn">
+          <div class="center" (click)="initRecord()">
+            <img src="assets/imgs/voic.png" class="voice">
+          </div>
+          <p class="txt1">Grave</p>
+          <p class="txt2">Pressione o botao em cima para começar a gravação</p>
+        </ion-slide>
+
+        <ion-slide class="slideUn">
+          <div class="center" (click)="upload()">
+            <img src="assets/imgs/grav.png" class="voice">
+          </div>
+          <p class="txt1">Envie</p>
+          <p class="txt2">Clique no botão a cima para enviar a sua música</p>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+
+  <!-- RECORD -->
+  <div *ngIf="record">
+    <div class="txtCenter">
+      <p class="clock">{{minutesLabel}}:{{secondsLabel}}:{{miLabel}}</p>
+      <p class="subClock">TEMPO DE GRAVAÇÃO</p>
+      <table id="laps"></table>
+
+      <ion-row class="musicRow">
+        <ion-col col-4 class="txtCenter" (click)="trash()">
+          <img src="assets/imgs/trash.png" class="sideIcon">
+        </ion-col>
+        <ion-col col-4 class="txtCenter" (click)="recordAudio()" *ngIf="!playIcon && !pauseIcon && !recording">
+          <img src="assets/imgs/start.png">
+        </ion-col>
+        <ion-col col-4 class="txtCenter" (click)="stopRecord()" *ngIf="!playIcon && !pauseIcon && recording">
+          <img src="assets/imgs/stopr.png">
+        </ion-col>
+        <ion-col col-4 class="txtCenter" (click)="play()" *ngIf="playIcon && !pauseIcon">
+          <img src="assets/imgs/play.png" style="margin-top: 10px">
+        </ion-col>
+        <ion-col col-4 class="txtCenter" (click)="pause()" *ngIf="!playIcon && pauseIcon">
+          <img src="assets/imgs/pause.png" style="margin-top: 20px">
+        </ion-col>
+        <ion-col col-4 class="txtCenter" (click)="selectTrack()">
+          <img src="assets/imgs/success.png" class="sideIcon">
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <!-- GENERO -->
+  <div *ngIf="pedido">
+    <div class="txtCenter">
+      <p class="topTitle">Gêneros musicais</p>
+      <p class="subTitle">Escolha o estilo de sua música</p>
+
+      <ion-list>
+        <button ion-item *ngFor="let item of generos" (click)="selectPedido(item)" style="text-transform: capitalize">
+          {{ item.name }}
+        </button>
+        <button ion-item (click)="selectGenero({name: 'outro'})">
+          outro
+        </button>
+      </ion-list>
+    </div>
+  </div>
+  <div *ngIf="pedidoConfirm">
+    <div class="txtCenter">
+      <p class="topTitle">Tudo certo!</p>
+      <p class="subTitle">
+        Estilo escolhido e em breve será enviada uma playlist feita especialmente para você.
+      </p>
+
+      <p class="subTitle" style="margin-top: 20% !important; font-weight: 700 !important; text-transform: capitalize">
+        {{generoSelecionado}}
+      </p>
+    </div>
+
+    <div class="btnEnviar" (click)="enviarPedido()">
+      Enviar
+    </div>
+  </div>
+
+  <!-- GENERO -->
+  <div *ngIf="genero">
+    <div class="txtCenter">
+      <p class="topTitle">Gêneros musicais</p>
+      <p class="subTitle">Escolha o estilo de sua música</p>
+
+      <ion-list>
+        <button ion-item *ngFor="let item of generos" (click)="selectGenero(item)" style="text-transform: capitalize">
+          {{ item.name }}
+        </button>
+        <button ion-item (click)="selectGenero({name: 'outro'})">
+          Outro
+        </button>
+      </ion-list>
+
+    </div>
+  </div>
+
+  <!-- NAMES -->
+  <div *ngIf="names">
+    <div class="topDiv">
+      <input class="custom" placeholder="NOME DA MÚSICA" [(ngModel)]="musica">
+    </div>
+    <div class="botDiv">
+      <!-- <input class="customSel" placeholder="PLAYLIST" [(ngModel)]="playlist"> -->
+      <ion-item>
+        <ion-select [(ngModel)]="playlist">
+          <ion-option value="0">Álbum</ion-option>
+          <ion-option *ngFor="let a of albuns" value="{{a.id}}">{{a.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+    </div>
+
+    <div class="btnEnviar" (click)="enviar()">
+      Enviar
+    </div>
+  </div>
+
+  <div *ngIf="albumt">
+    <img src="assets/imgs/ov.png" class="ov">
+    <div class="absD">
+      <span class="feat">Fauzi Halabe</span> <span class="feat2">{{album.categorie}}</span>
+      <p class="titleAlb">{{album.name}}</p>
+    </div>
+    <div class="topAlb" [ngStyle]="{ 'background-image': 'url(' + album.cover + ')'}"> </div>
+
+    <!-- SEGMENT -->
+    <ion-segment [(ngModel)]="tab">
+      <ion-segment-button value="albuns">
+        Faixas
+      </ion-segment-button>
+
+
+      <ion-segment-button value="upload" (click)="upload()">
+        Editar
+      </ion-segment-button>
+    </ion-segment>
+
+    <div *ngFor="let t of tracks" class="itemCust custPad2">
+
+      <audio-track #audio [track]="t">
+        <ion-row class="nopad">
+          <ion-col col-1 class="nopad">
+            <audio-track-play dark [audioTrack]="audio">
+              <ion-spinner></ion-spinner>
+            </audio-track-play>
+          </ion-col>
+          <ion-col col-11 class="nopad">
+            <span class="audioN" *ngIf="!audio.isPlaying">{{t.name}}</span>
+            <audio-track-progress-bar *ngIf="audio.isPlaying" duration progress [audioTrack]="audio"></audio-track-progress-bar>
+          </ion-col>
+        </ion-row>
+
+      </audio-track>
+    </div>
+  </div>
+
+</ion-content>

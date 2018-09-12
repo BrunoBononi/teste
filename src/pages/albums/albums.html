@@ -1,18 +1,44 @@
-<!--
-  Generated template for the AlbumsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>albums</ion-title>
-  </ion-navbar>
-
-</ion-header>
+<ion-header no-border>
 
 
-<ion-content padding>
+    <ion-navbar>
+  
+  
+      <ion-title center>
+        <span class="tit">Álbuns</span>
+      </ion-title>
+  
+      <ion-buttons end>
+        <button ion-button icon-only menuToggle>
+          <ion-icon name="menu" style="color: #BE0005"> </ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content>
 
-</ion-content>
+  
+    <div >
+      <!-- ALBUNS -->
+      <div class="custPad">
+        <ion-grid class="nopad">
+          <ion-row class="nopad">
+            <ion-col col-12 *ngFor="let a of albuns" style="margin-top: 20px" (click)="album(a)">
+              <div class="alb" [ngStyle]="{ 'background-image': 'url(' + a.cover + ')'}">
+  
+              </div>
+              <p class="aName">{{a.name}}</p>
+              <p class="aq">{{a.qnt}} Músicas</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+  
+
+    </div>
+  
+  
+  </ion-content>
