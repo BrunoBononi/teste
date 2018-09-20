@@ -9,7 +9,7 @@ import { FirebaseService } from '../../providers/firebase';
 import { ProfilePage } from '../profile/profile';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
-import { IOSFilePicker } from '@ionic-native/file-picker';
+// import { IOSFilePicker } from '@ionic-native/file-picker';
 
 @IonicPage()
 @Component({
@@ -62,6 +62,7 @@ export class ModalPage {
   pedido = false;
   pedidoConfirm = false;
   fazerUpload = false;
+  showSlider = true
 
   constructor
     (
@@ -78,8 +79,11 @@ export class ModalPage {
     public load: LoadingController,
     public fileChooser: FileChooser,
     private filePathPlugin: FilePath,
-    private filePicker: IOSFilePicker
-    ) {
+    // private filePicker: IOSFilePicker
+  ) {
+    if (this.platform.is('ios')) {
+      this.showSlider = false
+    }
     let user = JSON.parse(localStorage.getItem('currentUser'))
 
     this.firebaseService.getAlbuns(user.uid)
@@ -305,56 +309,56 @@ export class ModalPage {
   //Upload audio
   upload() {
     if (this.platform.is('ios')) {
-      this.filePicker.pickFile()
-        .then((uri) => {
-          console.log('ios', uri)
-          this.filePathPlugin.resolveNativePath(uri)
-            .then((r) => {
-              console.log(r)
-              let split = r.split('/');
-              let le = split.length;
-              let name = split[le - 1];
-              console.log(split, le, name)
-              let l = le - 1;
+      // this.filePicker.pickFile()
+      //   .then((uri) => {
+      //     console.log('ios', uri)
+      //     this.filePathPlugin.resolveNativePath(uri)
+      //       .then((r) => {
+      //         console.log(r)
+      //         let split = r.split('/');
+      //         let le = split.length;
+      //         let name = split[le - 1];
+      //         console.log(split, le, name)
+      //         let l = le - 1;
 
-              let i = 0;
-              let namePath = '';
-              for (i; i < l; i++) {
-                namePath = namePath + split[i] + '/';
-              }
+      //         let i = 0;
+      //         let namePath = '';
+      //         for (i; i < l; i++) {
+      //           namePath = namePath + split[i] + '/';
+      //         }
 
-              console.log('path', namePath)
-              this.fileName = name;
-              this.filePath = r.replace(/^file:\/\//, '');
+      //         console.log('path', namePath)
+      //         this.fileName = name;
+      //         this.filePath = r.replace(/^file:\/\//, '');
 
-              //Upload
-              this.carregar = this.load.create();
-              this.carregar.present()
-              // console.log(this.audio, this.musica, this.playlist, this.g
-              let storageRef = firebase.storage().ref();
-              let metadata = {
-                contentType: 'audio/mp3',
-              };
+      //         //Upload
+      //         this.carregar = this.load.create();
+      //         this.carregar.present()
+      //         // console.log(this.audio, this.musica, this.playlist, this.g
+      //         let storageRef = firebase.storage().ref();
+      //         let metadata = {
+      //           contentType: 'audio/mp3',
+      //         };
 
-              console.log(r, name)
-              this.file.readAsDataURL(namePath, name).then((file) => {
-                let voiceRef = storageRef.child(`records/${this.fileName}`).putString(file, firebase.storage.StringFormat.DATA_URL);
-                voiceRef.on(firebase.storage.TaskEvent.STATE_CHANGED, (snapshot) => {
-                  console.log("uploading");
-                }, (e) => {
-                  console.log(JSON.stringify(e, null, 2));
-                }, () => {
-                  console.log('sucesso')
-                  // this.download()
-                  this.genero = true
-                  this.fazerUpload = true
-                });
-              });
-            })
-            .catch((e) => {
-              console.log(e)
-            })
-        })
+      //         console.log(r, name)
+      //         this.file.readAsDataURL(namePath, name).then((file) => {
+      //           let voiceRef = storageRef.child(`records/${this.fileName}`).putString(file, firebase.storage.StringFormat.DATA_URL);
+      //           voiceRef.on(firebase.storage.TaskEvent.STATE_CHANGED, (snapshot) => {
+      //             console.log("uploading");
+      //           }, (e) => {
+      //             console.log(JSON.stringify(e, null, 2));
+      //           }, () => {
+      //             console.log('sucesso')
+      //             // this.download()
+      //             this.genero = true
+      //             this.fazerUpload = true
+      //           });
+      //         });
+      //       })
+      //       .catch((e) => {
+      //         console.log(e)
+      //       })
+      //   })
     }
     else {
       this.fileChooser.open()

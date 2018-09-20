@@ -20,7 +20,7 @@
           <p class="txt2">Pressione o botao em cima para começar a gravação</p>
         </ion-slide>
 
-        <ion-slide class="slideUn">
+        <ion-slide class="slideUn" *ngIf="showSlider">
           <div class="center" (click)="upload()">
             <img src="assets/imgs/grav.png" class="voice">
           </div>

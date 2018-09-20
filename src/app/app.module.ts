@@ -39,7 +39,7 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import { Camera } from '@ionic-native/camera';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
-import { IOSFilePicker } from '@ionic-native/file-picker';
+// import { IOSFilePicker } from '@ionic-native/file-picker';
 
 @NgModule({
   declarations: [
@@ -86,7 +86,7 @@ import { IOSFilePicker } from '@ionic-native/file-picker';
     ImagesUpload,
     FileChooser,
     FilePath,
-    IOSFilePicker
+    // IOSFilePicker
     // { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
